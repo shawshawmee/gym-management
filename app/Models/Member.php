@@ -14,12 +14,16 @@ class Member extends Model
     protected $fillable = [
         'name',
         'email',
-        'membership_type',
         'membership_expiration',
     ];
 
     public function trainer()
     {
         return $this->belongsTo(Trainer::class);
+    }
+
+    public function membership()
+    {
+        return $this->belongsTo(Member::class);
     }
 }

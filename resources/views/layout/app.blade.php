@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Gym Management</title>
 
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,11 +17,13 @@
             background-image: url("https://static.vecteezy.com/system/resources/previews/003/557/256/original/abstract-blue-and-orange-wave-business-background-free-vector.jpg");
             background-size: cover;
             background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position-x: center;
         }
     </style>
 </head>
 <body>
-    <div class="container m-5 mx-auto p-5">
+    <div class="container m-5 mx-auto p-5 text-warning">
         <h1>Gym Management System</h1>
         @yield('content')
     </div>

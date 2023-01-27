@@ -4,18 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Member;
+use App\Models\Trainer;
+use App\Models\Membership;
 
 class MemberController extends Controller
 {
     public function index(){
-        return view('index')->with('members', Member::latest()->get());
+        $members = Member::latest()->get();
+        $trainers = Trainer::all();
+        $memberships = Membership::all();
+        return view('index')
+            ->with('members', $members)
+            ->with('trainers', $trainers)
+            ->with('memberships', $memberships);
     }
 
     public function create(Request $request){
         $member = new Member;
         $member->name = $request->name;
         $member->email = $request->email;
-        $member->membership_type = $request->membership_type;
         $member->membership_expiration = $request->membership_expiration;
         $member->save();
 
@@ -26,7 +33,6 @@ class MemberController extends Controller
         $member = Member::find($request->id);
         $member->name = $request->name;
         $member->email = $request->email;
-        $member->membership_type = $request->membership_type;
         $member->membership_expiration = $request->membership_expiration;
         $member->save();
 
