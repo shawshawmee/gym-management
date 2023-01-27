@@ -65,7 +65,7 @@
         <tr>
             <td class="border border-end text-white">{{ fake()->name }}</td>
             <td class="border border-end text-white">{{ fake()->email }}</td>
-            <td class="border border-end text-white">{{ fake()->word }}</td>
+            <td class="border border-end text-white">Upper and Lower Workouts</td>
             <td class="border border-end text-white">{{ fake()->phoneNumber }}</td>
         @endforeach
     </tbody>
